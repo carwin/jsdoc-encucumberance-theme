@@ -1,0 +1,29 @@
+{
+  "name": "jsdoc-encucumberance-theme",
+  "version": "1.0.0",
+  "description": "A JSDoc theme with cucumber/cypress step definition support",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "nope"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carwin/jsdoc-encucumberance-theme.git"
+  },
+  "keywords": [
+    "jsdoc",
+    "documentation",
+    "cypress",
+    "cucumber",
+    "theme"
+  ],
+  "author": "Carwin Young",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carwin/jsdoc-encucumberance-theme/issues"
+  },
+  "homepage": "https://github.com/carwin/jsdoc-encucumberance-theme#readme",
+  "dependencies": {
+    "taffydb": "^2.7.3"
+  }
+}

@@ -1,0 +1,49 @@
+<?js
+  var data = obj;
+  var self = this;
+?>
+
+<div class="step-container">
+  <h5 class="name" id="<?js= id ?>"><?js= data.stepKey ?> <?js= data.expression ?></h5>
+  <div class="description">
+    <?js data.stepAliases && data.stepAliases.forEach(function(a) { ?>
+      <p><?js= data.stepKey ?> <?js= a ?></p>
+    <?js }) ?>
+    <p><?js= data.summary ?></p>
+  </div>
+
+
+<!-- <?js if (data.see && data.see.length) { ?>
+<h5>See:</h5>
+<ul>
+<?js data.see.forEach(function(s) { ?>
+<li><p><?js= self.linkto(s) ?></p></li>
+<?js }) ?>
+</ul>
+<?js } ?>
+-->
+
+<dl class="details">
+  <?js if(data.needs && data.needs.length > -1) { ?>
+    <dt class="tag-source">Needs:</dt>
+    <dd class="tag-source">
+      <ul>
+        <?js data.needs.forEach((e, i) => { ?>
+	<?js console.log('TEMPLATE', e) ?>
+          <li><?js= self.linkto(e.ref, e.context) ?></li>
+        <?js }) ?>
+      </ul>
+    </dd>
+  <?js } ?>
+    <dt class="tag-since">Reference name:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><?js= data.name ?></li></ul></dd>
+    <dt class="tag-since">Step group:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><?js= data.group ?></li></ul></dd>
+  </dl>
+
+
+
+  <?js if (data.params && params.length && !data.hideconstructor) { ?>
+    <h5>Parameters:</h5>
+    <?js= this.partial('params.tmpl', params) ?>
+  <?js } ?>
